@@ -1,0 +1,11 @@
+:host {
+  position: relative;
+  display: block;
+  background: linear-gradient(135deg, rgb(190, 230, 230) 0%, rgb(240, 235, 210) 55%, rgb(170, 210, 175) 100%);
+  overflow: hidden;
+
+  .layout-container {
+    min-height: 200vh;
+    padding-top: 140px;
+  }
+}
