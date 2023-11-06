@@ -1,0 +1,45 @@
+/// Zwraca odpowiednią wartość koloru z tablicy $color-stack, jej odcień, oraz stopień krycia
+///
+/// @group Project
+///
+/// @param {Unit} $color-id - nazwa koloru
+/// @param {Unit} $color-tone - numer odcienia
+/// @param {Unit} $opacity [1] - stopień krycia (0:1)
+@function color($color-id, $color-tone: 1, $opacity: 1) {
+  @if $color-id == inherit {
+    @return inherit;
+  }
+
+  $tones-map: map-get($colors-stack, $color-id);
+
+  @if $tones-map == null {
+    @error "Color `#{$color-id}` doesn't exist in $colors-stack.";
+  }
+
+  @return if($opacity == 1, nth($tones-map, $color-tone), rgba(nth($tones-map, $color-tone), $opacity));
+}
+
+/// Ustawienie wielkości elementu
+///
+/// @group Project
+///
+/// @param {Length} $width - Element's width
+/// @param {Length} $height [$width] - Element's height
+@mixin size($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/// Ustawienie elementu jako flex
+///
+/// @group Base Utils
+///
+/// @param {Length} $fd - [row] flex direction
+/// @param {Length} $jc [flex-start] justify content
+/// @param {Length} $ai [center] align items
+@mixin flex($fd: row, $jc: flex-start, $ai: flex-start) {
+  display: flex;
+  flex-direction: $fd;
+  justify-content: $jc;
+  align-items: $ai;
+}

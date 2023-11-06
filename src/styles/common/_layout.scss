@@ -1,5 +1,19 @@
 @import '../vars';
 
+html {
+  font-size: $root-font-size;
+}
+
+body {
+  background: linear-gradient(135deg, rgb(190, 230, 230) 0%, rgb(240, 235, 210) 55%, rgb(170, 210, 175) 100%);
+  font-family: $root-font-family;
+  color: $root-font-color;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;

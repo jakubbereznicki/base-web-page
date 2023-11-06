@@ -1,4 +1,24 @@
+$root-font-size: 16px;
+$root-font-family: 'DM Sans', sans-serif;
+$root-font-color: #0b303b;
+
 // Layout
 $desktop-padding: 200px;
 $tablet-padding: 32px;
 $mobile-padding: 16px;
+
+// Colors
+$colors-stack: (
+  accent: (
+    #151515,
+  ),
+  main: (
+    #0b303b,
+  ),
+  black: (
+    #000000,
+  ),
+  white: (
+    #ffffff,
+  ),
+);
