@@ -1,0 +1,27 @@
+@import '../../../../styles';
+
+:host {
+  display: block;
+  margin-top: 140px;
+
+  section {
+    @include flex(column, flex-start, center);
+
+    > span {
+      margin-bottom: 25px;
+    }
+
+    .logo-container {
+      @include flex(row, center, flex-start);
+
+      .icon {
+        margin: 0 30px;
+
+        &::ng-deep svg {
+          @include size(auto, 60px);
+          fill: color(main);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+<section>
+  <span *ngIf="!!data?.title">{{ data.title }}</span>
+
+  <div *ngIf="!!data?.three_boxes" class="boxes">
+    <ng-container *ngFor="let box of data.three_boxes">
+      <div class="box" [ngStyle]="{ backgroundColor: box.background_color }" [ngClass]="{ 'white-color': box.color.toLowerCase() === '#ffffff' }">
+        <div *ngIf="!!box?.image" class="icon"  aria-label="ikona" [inlineSVG]="box.image"></div>
+
+        <span *ngIf="!!box?.title" class="title">{{ box.title }}</span>
+        <span *ngIf="!!box?.subtitle" class="subtitle">{{ box.subtitle }}</span>
+      </div>
+    </ng-container>
+  </div>
+</section>

@@ -1,0 +1,58 @@
+@import '../../../../styles';
+
+:host {
+  display: block;
+  margin: 160px 0;
+
+  section {
+    @include flex(column, flex-start, center);
+
+    > span {
+      margin-bottom: 40px;
+      font-size: 32px;
+    }
+
+    .boxes {
+      @include flex(row, space-between, flex-start);
+      column-gap: 25px;
+
+      .box {
+        @include flex(column);
+        padding: 40px;
+        border-radius: 20px;
+
+        span {
+          color: color(main);
+
+          &.title {
+            margin-bottom: 20px;
+            font-size: 32px;
+          }
+
+          &.subtitle {
+            font-size: 17px;
+          }
+        }
+
+        .icon {
+          &::ng-deep svg {
+            @include size(auto, 100px);
+            fill: color(main);
+          }
+        }
+
+        &.white-color {
+          span {
+            color: color(white);
+          }
+
+          .icon {
+            &::ng-deep svg {
+              fill: color(white);
+            }
+          }
+        }
+      }
+    }
+  }
+}

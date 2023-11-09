@@ -1,6 +1,9 @@
 @import '../../../../styles';
 
 :host {
+  display: block;
+  margin-top: 80px;
+
   section {
     @include flex(column, center, center);
 
